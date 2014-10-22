@@ -7,6 +7,7 @@
 #
 %w(
   stack_commons::mysql_base
+  stack_commons::postgresql_master
   stack_commons::rabbitmq
   stack_commons::varnish
   stack_commons::redis_master

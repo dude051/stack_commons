@@ -20,12 +20,21 @@ provisioner:
 
 platforms:
   - name: ubuntu-12.04
+    attributes:
+      postgresql:
+        enable_pgdg_apt: true
     run_list:
     - recipe[apt]
   - name: ubuntu-14.04
+    attributes:
+      postgresql:
+        enable_pgdg_apt: true
     run_list:
     - recipe[apt]
   - name: centos-6.5
+    attributes:
+      postgresql:
+        enable_pgdg_yum: true
     run_list:
     - recipe[yum]
 
@@ -36,5 +45,8 @@ platforms:
 
 suites:
   - name: default
+    attributes:
+      postgresql:
+        version: '9.3'
     run_list:
       - recipe[wrapper::default]
